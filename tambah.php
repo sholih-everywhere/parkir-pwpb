@@ -29,7 +29,7 @@ if (isset($_GET["submit"])) {
   
   <div class="container pt-4">
 
-  <h1>Tambah Siswa</h1>
+  <h1>Tambah Kendaraan Parkir</h1>
   <hr>
   <form>
   <div class="mb-3">
