@@ -32,7 +32,8 @@ function tambah($data) {
     $plat = $data['plat'];
     $namakendaraan = $data['namakendaraan'];
     
-    $masuk = date("Y-m-d H:i:s");
+
+    $masuk = date("H:i:s");
     
     $keluar = NULL;
 
@@ -45,6 +46,7 @@ function tambah($data) {
 
     return 1;
 }
+
 
 
 function delete($plat){
@@ -78,8 +80,7 @@ function update($data, $id) {
 function keluar($plat) {
     global $conn;
 
-    // Mengambil tanggal saat ini dengan format Y-m-d H:i:s
-    $keluar = date("Y-m-d H:i:s");
+    $keluar = date("H:i:s");
 
     $query = "UPDATE kendaraan SET keluar='$keluar' WHERE plat='$plat'";
     $result = mysqli_query($conn, $query);

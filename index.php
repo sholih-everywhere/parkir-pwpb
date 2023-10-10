@@ -27,7 +27,7 @@ $hasil = query($query);
 <div class="container pt-4">
 
     <div class="d-flex justify-content-between">
-        <div><h1>Daftar Parkir, Admin By <a href=""><?php  echo $_SESSION["nama_lengkap"]  ?></a></h1></div>
+        <div><h1>Daftar Kendaraan Parkir, Admin By <a href=""><?php  echo $_SESSION["nama_lengkap"]  ?></a></h1></div>
 
         <div</div>
         <div><a href="logout.php" class="btn btn-primary m-4">Logout</a><a href="tambah.php" class="btn btn-danger">Tambahkan Parkir!</a></div>
