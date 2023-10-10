@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 10, 2023 at 06:36 AM
+-- Generation Time: Oct 10, 2023 at 06:50 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -39,50 +39,50 @@ CREATE TABLE `kendaraan` (
 --
 
 INSERT INTO `kendaraan` (`plat`, `namakendaraan`, `masuk`, `keluar`) VALUES
-(23123, 'Honda Jazz', '2023-10-10', '0000-00-00');
+(23123, 'Honda Jazz', '2023-10-10', '0000-00-00'),
+(43434, 'Alphard', '2023-10-10', '2023-10-10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `siswa`
+-- Table structure for table `tbl_users`
 --
 
-CREATE TABLE `siswa` (
-  `plat_nomor` int(11) NOT NULL,
-  `jenis_kendaraan` varchar(50) NOT NULL,
-  `jam_masuk` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `jam_keluar` date NOT NULL
+CREATE TABLE `tbl_users` (
+  `id_user` int(11) NOT NULL,
+  `nama_lengkap` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `siswa`
+-- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `siswa` (`plat_nomor`, `jenis_kendaraan`, `jam_masuk`, `jam_keluar`) VALUES
-(7, '17112082', '0000-00-00 00:00:00', '0000-00-00'),
-(13, '84873483', '0000-00-00 00:00:00', '0000-00-00'),
-(14, '349734', '0000-00-00 00:00:00', '0000-00-00'),
-(15, '3223232', '0000-00-00 00:00:00', '0000-00-00');
+INSERT INTO `tbl_users` (`id_user`, `nama_lengkap`, `username`, `password`) VALUES
+(1, 'Sholih', 'Sholih', 'a819faafbd47812130ba4ca7071bcc56'),
+(2, 'Sholihatul', 'Sholihatul', 'bc8c29e0ce2056be651fd6d0fc8ac4e3'),
+(3, 'admin', 'admin', '21232f297a57a5a743894a0e4a801fc3');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `siswa`
+-- Indexes for table `tbl_users`
 --
-ALTER TABLE `siswa`
-  ADD PRIMARY KEY (`plat_nomor`);
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `siswa`
+-- AUTO_INCREMENT for table `tbl_users`
 --
-ALTER TABLE `siswa`
-  MODIFY `plat_nomor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `tbl_users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
