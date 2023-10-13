@@ -41,6 +41,7 @@ $hasil = query($query);
             <th scope="col">Nama Kendaraan</th>
             <th scope="col">Jam Masuk</th>
             <th scope="col">Jam Keluar</th>
+            <th scope="col">Tanggal</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -51,6 +52,7 @@ $hasil = query($query);
                 <td><?php echo $item["namakendaraan"]; ?></td>
                 <td><?php echo $item["masuk"]; ?></td>
                 <td><?php echo $item["keluar"]; ?></td>
+                <td><?php echo $item["tanggal"]; ?></td>
                 <td>
                     <a href="delete.php?plat=<?php echo $item['plat']; ?>">Delete</a> |
                     <a href="edit.php?plat=<?php echo $item['plat']  ?>">Keluar!</a>

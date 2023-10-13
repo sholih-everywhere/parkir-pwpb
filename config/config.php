@@ -32,12 +32,11 @@ function tambah($data) {
     $plat = $data['plat'];
     $namakendaraan = $data['namakendaraan'];
     
-
-    $masuk = date("H:i:s");
-    
     $keluar = NULL;
 
-    $query = "INSERT INTO kendaraan (plat, namakendaraan, masuk, keluar) VALUES ('$plat', '$namakendaraan', '$masuk', '$keluar')";
+    $date = date("Y-m-d");
+
+    $query = "INSERT INTO kendaraan (plat, namakendaraan, masuk, keluar, tanggal) VALUES ('$plat', '$namakendaraan', now(), '$keluar', '$date')";
 
     $result = mysqli_query($conn, $query);
     if (!$result) {
@@ -82,7 +81,7 @@ function keluar($plat) {
 
     $keluar = date("H:i:s");
 
-    $query = "UPDATE kendaraan SET keluar='$keluar' WHERE plat='$plat'";
+    $query = "UPDATE kendaraan SET keluar=now() WHERE plat='$plat'";
     $result = mysqli_query($conn, $query);
 
     if (!$result) {
