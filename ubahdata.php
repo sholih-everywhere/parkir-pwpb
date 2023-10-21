@@ -1,4 +1,15 @@
+<?php   
 
+include "config/config.php";
+
+global $conn;
+
+$plat = $_GET['plat'];
+$query = "SELECT * FROM kendaraan WHERE plat='$plat'";
+$result = mysqli_query($conn, $query);
+$data = mysqli_fetch_array($result);
+
+?>
 
 <!doctype html>
 <html lang="en">
@@ -19,18 +30,19 @@
 
   <h1>Tambah Kendaraan Parkir</h1>
   <hr>
-  <form enctype="multipart/form-data" method="post" action="simpan-tambah.php">
+  <form enctype="multipart/form-data" method="post" action="ubahdataquery.php">
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Plat Nomor</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="plat">
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="plat" value="<?php  echo $data["plat"]  ?>">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Nama Kendaraan</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="namakendaraan">
+    <input type="text" class="form-control" id="exampleInputPassword1" name="namakendaraan"  value="<?php  echo $data["namakendaraan"]  ?>">
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Foto Kendaraan</label>
-    <input type="file" class="form-control" id="exampleInputPassword1" name="foto">
+    <input type="file" class="form-control" id="exampleInputPassword1" name="foto" value="<?php echo $data["foto_kendaraan"]  ?>">
+    <input type="hidden" class="form-control" id="exampleInputPassword1" name="masuk" value="<?php echo $data["masuk"]  ?>">
   </div>
 
   <button type="submit" class="btn btn-primary" name="submit" value="submit">Tambahkan</button>

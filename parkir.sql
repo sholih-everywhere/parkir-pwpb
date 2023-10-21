@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2023 at 06:12 AM
+-- Generation Time: Oct 21, 2023 at 01:02 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -30,17 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `kendaraan` (
   `plat` varchar(255) NOT NULL,
   `namakendaraan` varchar(50) NOT NULL,
-  `masuk` time NOT NULL,
-  `keluar` time NOT NULL,
-  `tanggal` date DEFAULT NULL
+  `foto_kendaraan` blob NOT NULL,
+  `masuk` datetime NOT NULL,
+  `keluar` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `kendaraan`
 --
 
-INSERT INTO `kendaraan` (`plat`, `namakendaraan`, `masuk`, `keluar`, `tanggal`) VALUES
-('B 29103 SFA', 'Mobilio', '06:10:45', '11:11:35', '2023-10-13');
+INSERT INTO `kendaraan` (`plat`, `namakendaraan`, `foto_kendaraan`, `masuk`, `keluar`) VALUES
+('plasss', 'Honda ', 0x646f776e6c6f61642e6a706567, '2023-10-21 17:19:39', '2023-10-21 17:58:08');
 
 -- --------------------------------------------------------
 

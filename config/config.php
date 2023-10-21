@@ -26,27 +26,6 @@ function query($query){
     return $data;
 }
 
-function tambah($data) {
-    global $conn;
-
-    $plat = $data['plat'];
-    $namakendaraan = $data['namakendaraan'];
-    
-    $keluar = NULL;
-
-    $date = date("Y-m-d");
-
-    $query = "INSERT INTO kendaraan (plat, namakendaraan, masuk, keluar, tanggal) VALUES ('$plat', '$namakendaraan', now(), '$keluar', '$date')";
-
-    $result = mysqli_query($conn, $query);
-    if (!$result) {
-        die("Error: " . mysqli_error($conn));
-    }
-
-    return 1;
-}
-
-
 
 function delete($plat){
     global $conn;
